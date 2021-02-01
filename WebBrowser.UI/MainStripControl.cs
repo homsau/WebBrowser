@@ -29,6 +29,15 @@ namespace WebBrowser.UI
                 "\nOne thing I want to be sure to implement is a 'Dark' mode\n\nStudent ID: 902416606\n");
         }
 
+        private void toolStripTextBox1_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)Keys.Enter)
+            {
+                e.Handled = true;
+                Navigate(toolStripTextBox1.Text);
+            }
+        }
+        
         private void toolStripButton5_Click(object sender, EventArgs e)
         {
             webBrowser1.Navigate(toolStripTextBox1.Text);
