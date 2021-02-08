@@ -57,6 +57,12 @@ namespace WebBrowser.UI
             webBrowser1.Refresh();
         }
 
+        // STOP! collaborate and listen... stops the page*
+        private void toolStripButton7_Click(object sender, EventArgs e)
+        {
+            webBrowser1.Stop();
+        }
+
         // stacks
         private void backLinks(String address)
         {
@@ -64,6 +70,22 @@ namespace WebBrowser.UI
             backLinksString.Push("one");
             return;
 
+        }
+
+        private void toolStripButton2_Click(object sender, EventArgs e)
+        {
+            if (webBrowser1.CanGoBack)
+            {
+                webBrowser1.GoBack();
+            }
+        }
+
+        private void toolStripButton1_Click(object sender, EventArgs e)
+        {
+            if (webBrowser1.CanGoForward)
+            {
+                webBrowser1.GoForward();
+            }
         }
     }
 }

@@ -40,16 +40,59 @@ namespace WebBrowser.UI
             tp.Text = "New Tab";
             tp.Controls.Add(new tabControl2());
             MasterTabControl.TabPages.Add(tp);
+            MasterTabControl.SelectTab(MasterTabControl.TabPages.Count - 1);
         }
 
         private void closeCurrentTabToolStripMenuItem_Click(object sender, EventArgs e)
         {
             MasterTabControl.TabPages.Remove(MasterTabControl.SelectedTab);
+            if (MasterTabControl.TabPages.Count > 1)
+            {
+                MasterTabControl.SelectTab(MasterTabControl.TabPages.Count - 1);
+            } 
+            
         }
 
-        /* private void toolStripButton5_Click(object sender, EventArgs e)
-         {
-             webBrowser1.Navigate(toolStripTextBox1.Text);
-         }*/
+        private void MasterTabControl_KeyDown(object sender, KeyEventArgs e)
+        {
+            var tp = new TabPage();
+            tp.Text = "New Tab";
+            tp.Controls.Add(new tabControl2());
+            if (e.Control && (e.KeyCode == Keys.T)) //opens new tab
+            {
+                this.MasterTabControl.TabPages.Add(tp);
+            }
+            if (e.Control && (e.KeyCode == Keys.W)) //closes tab
+            {
+                MasterTabControl.TabPages.Remove(MasterTabControl.SelectedTab);
+               /* if (MasterTabControl.TabPages.Count > 1)
+                {
+                    MasterTabControl.SelectTab(MasterTabControl.TabPages.Count - 1);
+                }*/
+            }
+
+            /*var tp = new TabPage();
+            tp.Text = "New Tab";
+            tp.Controls.Add(new tabControl2());
+            if (e.Control && (e.KeyCode == Keys.T)) //opens new tab
+                //this.MasterTabControl.TabPages.Add(new TabPage("New Tab"));
+                this.MasterTabControl.TabPages.Add(tp);
+                MasterTabControl.SelectTab(MasterTabControl.TabPages.Count - 1);
+
+            if (e.Control && (e.KeyCode == Keys.W))
+                this.MasterTabControl.TabPages.RemoveAt(this.MasterTabControl.SelectedIndex);
+ //               MasterTabControl.TabPages.Remove(MasterTabControl.SelectedTab); //closes selected tab
+                //MasterTabControl.SelectTab(MasterTabControl.TabPages.Count - 1);
+          
+                //MasterTabControl.TabPages.Remove(MasterTabControl.SelectedTab);
+
+
+
+            /* private void toolStripButton5_Click(object sender, EventArgs e)
+             {
+                 webBrowser1.Navigate(toolStripTextBox1.Text);
+             }*/
+        }
+
     }
 }
