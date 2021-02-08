@@ -8,6 +8,11 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
+/*
+ * Future Features:
+ * make sure url updates each text box per tab
+ * hold down mouse on back/forward buttons to show multiple pages (up to 5 maybe?)
+ */
 namespace WebBrowser.UI
 {
     public partial class MainStripControl : Form
@@ -29,46 +34,22 @@ namespace WebBrowser.UI
                 "\nOne thing I want to be sure to implement is a 'Dark' mode\n\nStudent ID: 902416606\n");
         }
 
-        private void toolStripTextBox1_KeyPress(object sender, KeyPressEventArgs e)
+        private void newTabToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            if (e.KeyChar == (char)Keys.Enter)
-            {
-                e.Handled = true;
-                Navigate(toolStripTextBox1.Text);
-            }
-        }
-        
-        private void toolStripButton5_Click(object sender, EventArgs e)
-        {
-            webBrowser1.Navigate(toolStripTextBox1.Text);
+            var tp = new TabPage();
+            tp.Text = "New Tab";
+            tp.Controls.Add(new tabControl2());
+            MasterTabControl.TabPages.Add(tp);
         }
 
-        private void toolStripTextBox1_KeyDown(object sender, KeyEventArgs e)
+        private void closeCurrentTabToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            if (e.KeyCode == Keys.Enter)
-            {
-                webBrowser1.Navigate(toolStripTextBox1.Text);
-            }
+            MasterTabControl.TabPages.Remove(MasterTabControl.SelectedTab);
         }
 
-        // navigates to the given url if it's valid
-        private void Navigate(String address)
-        {
-            if (String.IsNullOrEmpty(address)) return;
-            if (address.Equals("about:blank")) return;
-            if (!address.StartsWith("http://") &&
-                !address.StartsWith("https://"))
-            {
-                address = "http://" + address;
-            }
-            try
-            {
-                webBrowser1.Navigate(new Uri(address));
-            }
-            catch (System.UriFormatException)
-            {
-                return;
-            }
-        }
+        /* private void toolStripButton5_Click(object sender, EventArgs e)
+         {
+             webBrowser1.Navigate(toolStripTextBox1.Text);
+         }*/
     }
 }
