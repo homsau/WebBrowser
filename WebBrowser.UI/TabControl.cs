@@ -12,23 +12,92 @@ namespace WebBrowser.UI
 {
     public partial class tabControl2 : UserControl
     {
+        static String currentStateUrl = "";
+        static Stack<string> backStack = new Stack<string>();
+        static Stack<string> forwardStack = new Stack<string>();
+
         public tabControl2()
         {
             InitializeComponent();
         }
 
+        // HITTING ENTER TO 'GO'
         private void toolStripTextBox1_KeyPress(object sender, KeyPressEventArgs e)
         {
             if (e.KeyChar == (char)Keys.Enter)
             {
                 e.Handled = true;
+                if (currentStateUrl != "")
+                {
+                    backStack.Push(currentStateUrl);
+                }
                 Navigate(toolStripTextBox1.Text);
+                currentStateUrl = toolStripTextBox1.Text; // stores current url
+                currUrl.Text = currentStateUrl; // stores current url in label i will delete later
             }
         }
 
+        // PRESSING GO BUTTON
         private void toolStripButton5_Click(object sender, EventArgs e)
         {
-            webBrowser1.Navigate(toolStripTextBox1.Text);
+            if (currentStateUrl != "")
+            {
+                backStack.Push(currentStateUrl);
+            }
+            Navigate(toolStripTextBox1.Text);
+            currentStateUrl = toolStripTextBox1.Text; // stores current url
+            currUrl.Text = currentStateUrl; // stores current url in label i will delete later
+        }
+
+        // BACK BUTTON
+        private void toolStripButton2_Click(object sender, EventArgs e)
+        {
+            if (backStack.Count == 0 || currentStateUrl == backStack.Peek())
+            {
+                Console.Write("Not Available\n");
+                return;
+            }
+            else
+            {
+                forwardStack.Push(currentStateUrl);
+                FS.Text = currentStateUrl; // stores current url in label i will delete later
+                currentStateUrl = backStack.Peek();
+                currUrl.Text = currentStateUrl; // stores current url in label i will delete later
+                Navigate(currentStateUrl);
+                backStack.Pop();
+            }
+            /*
+            if (webBrowser1.CanGoBack)
+            {
+                backStack.Push(currentStateUrl);
+                BS.Text = currentStateUrl;
+                webBrowser1.GoBack();
+            }*/
+        }
+
+        // FORWARD BUTTON
+        private void toolStripButton1_Click(object sender, EventArgs e)
+        {
+            if (forwardStack.Count == 0 || currentStateUrl == forwardStack.Peek())
+            {
+                Console.Write("Not Available\n");
+                return;
+            } else
+            {
+                backStack.Push(currentStateUrl);
+                BS.Text = currentStateUrl; // stores current url in label i will delete later
+                currentStateUrl = forwardStack.Peek();
+                currUrl.Text = currentStateUrl; // stores current url in label i will delete later
+                Navigate(currentStateUrl);
+                forwardStack.Pop();
+            }
+            /*
+            if (webBrowser1.CanGoForward)
+            {
+                backStack.Push(currentStateUrl);
+                FS.Text = currentStateUrl;
+                webBrowser1.GoForward();
+            }*/
         }
 
         // navigates to the given url if it's valid
@@ -61,31 +130,6 @@ namespace WebBrowser.UI
         private void toolStripButton7_Click(object sender, EventArgs e)
         {
             webBrowser1.Stop();
-        }
-
-        // stacks
-        private void backLinks(String address)
-        {
-            Stack<string> backLinksString = new Stack<String>();
-            backLinksString.Push("one");
-            return;
-
-        }
-
-        private void toolStripButton2_Click(object sender, EventArgs e)
-        {
-            if (webBrowser1.CanGoBack)
-            {
-                webBrowser1.GoBack();
-            }
-        }
-
-        private void toolStripButton1_Click(object sender, EventArgs e)
-        {
-            if (webBrowser1.CanGoForward)
-            {
-                webBrowser1.GoForward();
-            }
         }
     }
 }

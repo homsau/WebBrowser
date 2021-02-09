@@ -34,13 +34,16 @@ namespace WebBrowser.UI
             this.toolStripButton2 = new System.Windows.Forms.ToolStripButton();
             this.toolStripButton1 = new System.Windows.Forms.ToolStripButton();
             this.toolStripButton3 = new System.Windows.Forms.ToolStripButton();
+            this.toolStripButton7 = new System.Windows.Forms.ToolStripButton();
             this.toolStripButton4 = new System.Windows.Forms.ToolStripButton();
             this.toolStripTextBox1 = new System.Windows.Forms.ToolStripTextBox();
             this.toolStripButton5 = new System.Windows.Forms.ToolStripButton();
             this.toolStripButton6 = new System.Windows.Forms.ToolStripButton();
             this.TabControl1 = new System.Windows.Forms.WebBrowser();
             this.webBrowser1 = new System.Windows.Forms.WebBrowser();
-            this.toolStripButton7 = new System.Windows.Forms.ToolStripButton();
+            this.currUrl = new System.Windows.Forms.Label();
+            this.BS = new System.Windows.Forms.Label();
+            this.FS = new System.Windows.Forms.Label();
             this.tabControl3.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -92,6 +95,16 @@ namespace WebBrowser.UI
             this.toolStripButton3.Text = "toolStripButton3";
             this.toolStripButton3.Click += new System.EventHandler(this.toolStripButton3_Click);
             // 
+            // toolStripButton7
+            // 
+            this.toolStripButton7.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.toolStripButton7.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton7.Image")));
+            this.toolStripButton7.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButton7.Name = "toolStripButton7";
+            this.toolStripButton7.Size = new System.Drawing.Size(29, 28);
+            this.toolStripButton7.Text = "toolStripButton7";
+            this.toolStripButton7.Click += new System.EventHandler(this.toolStripButton7_Click);
+            // 
             // toolStripButton4
             // 
             this.toolStripButton4.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
@@ -106,7 +119,7 @@ namespace WebBrowser.UI
             this.toolStripTextBox1.AcceptsReturn = true;
             this.toolStripTextBox1.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.toolStripTextBox1.Name = "toolStripTextBox1";
-            this.toolStripTextBox1.Size = new System.Drawing.Size(100, 31);
+            this.toolStripTextBox1.Size = new System.Drawing.Size(200, 31);
             this.toolStripTextBox1.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.toolStripTextBox1_KeyPress);
             // 
             // toolStripButton5
@@ -146,20 +159,40 @@ namespace WebBrowser.UI
             this.webBrowser1.Size = new System.Drawing.Size(750, 389);
             this.webBrowser1.TabIndex = 4;
             // 
-            // toolStripButton7
+            // currUrl
             // 
-            this.toolStripButton7.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.toolStripButton7.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton7.Image")));
-            this.toolStripButton7.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButton7.Name = "toolStripButton7";
-            this.toolStripButton7.Size = new System.Drawing.Size(29, 28);
-            this.toolStripButton7.Text = "toolStripButton7";
-            this.toolStripButton7.Click += new System.EventHandler(this.toolStripButton7_Click);
+            this.currUrl.AutoSize = true;
+            this.currUrl.Location = new System.Drawing.Point(441, 10);
+            this.currUrl.Name = "currUrl";
+            this.currUrl.Size = new System.Drawing.Size(51, 17);
+            this.currUrl.TabIndex = 5;
+            this.currUrl.Text = "currUrl";
+            // 
+            // BS
+            // 
+            this.BS.AutoSize = true;
+            this.BS.Location = new System.Drawing.Point(549, 7);
+            this.BS.Name = "BS";
+            this.BS.Size = new System.Drawing.Size(26, 17);
+            this.BS.TabIndex = 6;
+            this.BS.Text = "BS";
+            // 
+            // FS
+            // 
+            this.FS.AutoSize = true;
+            this.FS.Location = new System.Drawing.Point(653, 7);
+            this.FS.Name = "FS";
+            this.FS.Size = new System.Drawing.Size(25, 17);
+            this.FS.TabIndex = 7;
+            this.FS.Text = "FS";
             // 
             // tabControl2
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.FS);
+            this.Controls.Add(this.BS);
+            this.Controls.Add(this.currUrl);
             this.Controls.Add(this.webBrowser1);
             this.Controls.Add(this.TabControl1);
             this.Controls.Add(this.tabControl3);
@@ -185,5 +218,8 @@ namespace WebBrowser.UI
         private System.Windows.Forms.WebBrowser TabControl1;
         private System.Windows.Forms.WebBrowser webBrowser1;
         private System.Windows.Forms.ToolStripButton toolStripButton7;
+        private System.Windows.Forms.Label currUrl;
+        private System.Windows.Forms.Label BS;
+        private System.Windows.Forms.Label FS;
     }
 }

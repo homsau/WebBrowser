@@ -45,10 +45,13 @@ namespace WebBrowser.UI
 
         private void closeCurrentTabToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            // this isn't done but I feel like this section will help me later
+            // was thinking of ways to get my tabs to go to the properly selected one upon open/close
+            var tIndex = MasterTabControl.TabIndex;
             MasterTabControl.TabPages.Remove(MasterTabControl.SelectedTab);
-            if (MasterTabControl.TabPages.Count > 1)
+            if (tIndex >= 0 && tIndex <= MasterTabControl.TabPages.Count)
             {
-                MasterTabControl.SelectTab(MasterTabControl.TabPages.Count - 1);
+                MasterTabControl.SelectTab(tIndex);
             } 
             
         }
@@ -64,35 +67,12 @@ namespace WebBrowser.UI
             }
             if (e.Control && (e.KeyCode == Keys.W)) //closes tab
             {
-                MasterTabControl.TabPages.Remove(MasterTabControl.SelectedTab);
-               /* if (MasterTabControl.TabPages.Count > 1)
+                this.MasterTabControl.TabPages.Remove(MasterTabControl.SelectedTab);
+                if (MasterTabControl.TabPages.Count > 1)
                 {
-                    MasterTabControl.SelectTab(MasterTabControl.TabPages.Count - 1);
-                }*/
+                   // MasterTabControl.SelectTab(MasterTabControl.TabPages.Count - 1);
+                }
             }
-
-            /*var tp = new TabPage();
-            tp.Text = "New Tab";
-            tp.Controls.Add(new tabControl2());
-            if (e.Control && (e.KeyCode == Keys.T)) //opens new tab
-                //this.MasterTabControl.TabPages.Add(new TabPage("New Tab"));
-                this.MasterTabControl.TabPages.Add(tp);
-                MasterTabControl.SelectTab(MasterTabControl.TabPages.Count - 1);
-
-            if (e.Control && (e.KeyCode == Keys.W))
-                this.MasterTabControl.TabPages.RemoveAt(this.MasterTabControl.SelectedIndex);
- //               MasterTabControl.TabPages.Remove(MasterTabControl.SelectedTab); //closes selected tab
-                //MasterTabControl.SelectTab(MasterTabControl.TabPages.Count - 1);
-          
-                //MasterTabControl.TabPages.Remove(MasterTabControl.SelectedTab);
-
-
-
-            /* private void toolStripButton5_Click(object sender, EventArgs e)
-             {
-                 webBrowser1.Navigate(toolStripTextBox1.Text);
-             }*/
         }
-
     }
 }
