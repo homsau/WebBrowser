@@ -60,6 +60,11 @@
     <Compile Include="TabControl.Designer.cs">
       <DependentUpon>TabControl.cs</DependentUpon>
     </Compile>
+    <Compile Include="WebBrowserDBDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>WebBrowserDBDataSet.xsd</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="MainStripControl.resx">
       <DependentUpon>MainStripControl.cs</DependentUpon>
     </EmbeddedResource>
@@ -84,6 +89,17 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <None Include="WebBrowserDBDataSet.xsc">
+      <DependentUpon>WebBrowserDBDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="WebBrowserDBDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>WebBrowserDBDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="WebBrowserDBDataSet.xss">
+      <DependentUpon>WebBrowserDBDataSet.xsd</DependentUpon>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
