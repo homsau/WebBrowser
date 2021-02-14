@@ -156,17 +156,10 @@ namespace WebBrowser.UI
             var item = new HistoryItem();
             var now = DateTime.Now;
             //Console.WriteLine("Now = " + now);
-            if(currentStateUrl != item.RepeatFix)
-            {
-                item.RepeatFix = currentStateUrl;
-                item.URL = toolStripTextBox1.Text;
-                item.Title = webBrowser1.DocumentTitle;
-                item.Date = now;
-                HistoryManager.AddItem(item);
-            } else
-            {
-                return;
-            }
+            item.URL = toolStripTextBox1.Text;
+            item.Title = webBrowser1.DocumentTitle;
+            item.Date = now;
+            HistoryManager.AddItem(item);
         }
     }
 }
