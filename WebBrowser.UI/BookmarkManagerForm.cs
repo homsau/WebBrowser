@@ -25,7 +25,7 @@ namespace WebBrowser.UI
 
             foreach (var item in items)
             {
-                bookmarkList.Items.Add(string.Format("{1} - {0}", item.Title, item.URL));
+                bookmarkList.Items.Add(string.Format("{0} - {1}", item.Title, item.URL));
             }
         }
     }

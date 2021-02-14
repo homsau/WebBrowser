@@ -11,5 +11,6 @@ namespace WebBrowser.Logic
         public string URL { get; set; }
         public string Title { get; set; }
         public DateTime Date { get; set; }
+        public string RepeatFix { get; set; }
     }
 }

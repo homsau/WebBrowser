@@ -40,7 +40,8 @@ namespace WebBrowser.UI
             this.historyList.Items.AddRange(new object[] {
             "URL",
             "Title",
-            "Date"});
+            "Date",
+            "RepeatFix"});
             this.historyList.Location = new System.Drawing.Point(0, 0);
             this.historyList.Name = "historyList";
             this.historyList.Size = new System.Drawing.Size(800, 450);

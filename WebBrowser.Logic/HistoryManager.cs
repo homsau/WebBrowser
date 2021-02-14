@@ -26,7 +26,6 @@ namespace WebBrowser.Logic
                 item.URL = row.URL;
                 item.Title = row.Title;
                 item.Date = row.Date;
-
                 results.Add(item);
             }
             return results;

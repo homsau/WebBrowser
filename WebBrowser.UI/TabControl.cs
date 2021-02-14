@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using WebBrowser.Logic;
 
 namespace WebBrowser.UI
 {
@@ -141,7 +142,23 @@ namespace WebBrowser.UI
         private void toolStripButton6_Click(object sender, EventArgs e)
         {
             var itemsForm = new BookmarkManagerForm();
+            currentStateUrl = toolStripTextBox1.Text;
+            //MessageBox.Show(currentStateUrl);
+            var item = new BookmarkItem();
+            item.URL = toolStripTextBox1.Text;
+            item.Title = webBrowser1.DocumentTitle;
+            BookmarkManager.AddItem(item);
             itemsForm.ShowDialog();
+        }
+
+        private void webBrowser1_DocumentCompleted(object sender, WebBrowserDocumentCompletedEventArgs e)
+        {
+            var item = new HistoryItem();
+            DateTime now = DateTime.Now;
+            item.URL = toolStripTextBox1.Text;
+            item.Title = webBrowser1.DocumentTitle;
+            item.Date = now;
+            HistoryManager.AddItem(item);
         }
     }
 }

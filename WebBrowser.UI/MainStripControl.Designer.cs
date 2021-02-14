@@ -58,7 +58,7 @@
             this.helpToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(800, 28);
+            this.menuStrip1.Size = new System.Drawing.Size(800, 30);
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -72,7 +72,7 @@
             this.toolStripSeparator1,
             this.exitWebBrowserToolStripMenuItem});
             this.fileToolStripMenuItem.Name = "fileToolStripMenuItem";
-            this.fileToolStripMenuItem.Size = new System.Drawing.Size(46, 24);
+            this.fileToolStripMenuItem.Size = new System.Drawing.Size(46, 26);
             this.fileToolStripMenuItem.Text = "File";
             // 
             // newTabToolStripMenuItem
@@ -119,27 +119,29 @@
             this.manageHistoryToolStripMenuItem,
             this.manageBoomarksToolStripMenuItem});
             this.toolsToolStripMenuItem.Name = "toolsToolStripMenuItem";
-            this.toolsToolStripMenuItem.Size = new System.Drawing.Size(58, 24);
+            this.toolsToolStripMenuItem.Size = new System.Drawing.Size(58, 26);
             this.toolsToolStripMenuItem.Text = "Tools";
             // 
             // manageHistoryToolStripMenuItem
             // 
             this.manageHistoryToolStripMenuItem.Name = "manageHistoryToolStripMenuItem";
-            this.manageHistoryToolStripMenuItem.Size = new System.Drawing.Size(216, 26);
+            this.manageHistoryToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
             this.manageHistoryToolStripMenuItem.Text = "Manage History";
+            this.manageHistoryToolStripMenuItem.Click += new System.EventHandler(this.manageHistoryToolStripMenuItem_Click);
             // 
             // manageBoomarksToolStripMenuItem
             // 
             this.manageBoomarksToolStripMenuItem.Name = "manageBoomarksToolStripMenuItem";
-            this.manageBoomarksToolStripMenuItem.Size = new System.Drawing.Size(216, 26);
+            this.manageBoomarksToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
             this.manageBoomarksToolStripMenuItem.Text = "Manage Boomarks";
+            this.manageBoomarksToolStripMenuItem.Click += new System.EventHandler(this.manageBoomarksToolStripMenuItem_Click);
             // 
             // helpToolStripMenuItem
             // 
             this.helpToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.aboutToolStripMenuItem});
             this.helpToolStripMenuItem.Name = "helpToolStripMenuItem";
-            this.helpToolStripMenuItem.Size = new System.Drawing.Size(55, 24);
+            this.helpToolStripMenuItem.Size = new System.Drawing.Size(55, 26);
             this.helpToolStripMenuItem.Text = "Help";
             // 
             // aboutToolStripMenuItem
@@ -153,11 +155,11 @@
             // 
             this.MasterTabControl.Controls.Add(this.tabPage1);
             this.MasterTabControl.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.MasterTabControl.Location = new System.Drawing.Point(0, 28);
+            this.MasterTabControl.Location = new System.Drawing.Point(0, 30);
             this.MasterTabControl.Name = "MasterTabControl";
             this.MasterTabControl.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.MasterTabControl.SelectedIndex = 0;
-            this.MasterTabControl.Size = new System.Drawing.Size(800, 422);
+            this.MasterTabControl.Size = new System.Drawing.Size(800, 420);
             this.MasterTabControl.TabIndex = 1;
             this.MasterTabControl.KeyDown += new System.Windows.Forms.KeyEventHandler(this.MasterTabControl_KeyDown);
             // 
@@ -167,7 +169,7 @@
             this.tabPage1.Location = new System.Drawing.Point(4, 25);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(792, 393);
+            this.tabPage1.Size = new System.Drawing.Size(792, 391);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "tabPage1";
             this.tabPage1.UseVisualStyleBackColor = true;
@@ -177,7 +179,7 @@
             this.tabControl2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tabControl2.Location = new System.Drawing.Point(3, 3);
             this.tabControl2.Name = "tabControl2";
-            this.tabControl2.Size = new System.Drawing.Size(786, 387);
+            this.tabControl2.Size = new System.Drawing.Size(786, 385);
             this.tabControl2.TabIndex = 0;
             // 
             // MainStripControl

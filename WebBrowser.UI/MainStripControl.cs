@@ -68,11 +68,25 @@ namespace WebBrowser.UI
             if (e.Control && (e.KeyCode == Keys.W)) //closes tab
             {
                 this.MasterTabControl.TabPages.Remove(MasterTabControl.SelectedTab);
-                if (MasterTabControl.TabPages.Count > 1)
+                if (MasterTabControl.TabPages.Count > 1) 
+                // I THINK THIS CODE WILL LATER HELP ME AUTO SELECT THE CORRECT TAB AFTER CLOSING
+                // AT LEAST HELP WITH BRAINSTORMING
                 {
                    // MasterTabControl.SelectTab(MasterTabControl.TabPages.Count - 1);
                 }
             }
+        }
+
+        private void manageHistoryToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            var itemsForm = new HistoryManagerForm();
+            itemsForm.ShowDialog();
+        }
+
+        private void manageBoomarksToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            var itemsForm = new BookmarkManagerForm();
+            itemsForm.ShowDialog();
         }
     }
 }

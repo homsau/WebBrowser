@@ -24,7 +24,7 @@ namespace WebBrowser.UI
             historyList.Items.Clear();
 
             foreach(var item in items) {
-                historyList.Items.Add(string.Format("{2} - {1} - {0}", item.Date, item.Title, item.URL));
+                historyList.Items.Add(string.Format("{0} - {1} - {2}", item.Title, item.URL, item.Date));
             }
         }
     }
