@@ -131,5 +131,17 @@ namespace WebBrowser.UI
         {
             webBrowser1.Stop();
         }
+
+        private void toolStripButton8_Click(object sender, EventArgs e)
+        {
+            var itemsForm = new HistoryManagerForm();
+            itemsForm.ShowDialog();
+        }
+
+        private void toolStripButton6_Click(object sender, EventArgs e)
+        {
+            var itemsForm = new BookmarkManagerForm();
+            itemsForm.ShowDialog();
+        }
     }
 }

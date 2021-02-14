@@ -46,6 +46,18 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BookmarkManagerForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BookmarkManagerForm.Designer.cs">
+      <DependentUpon>BookmarkManagerForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HistoryManagerForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HistoryManagerForm.Designer.cs">
+      <DependentUpon>HistoryManagerForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="MainStripControl.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -65,6 +77,12 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>WebBrowserDBDataSet.xsd</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="BookmarkManagerForm.resx">
+      <DependentUpon>BookmarkManagerForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HistoryManagerForm.resx">
+      <DependentUpon>HistoryManagerForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="MainStripControl.resx">
       <DependentUpon>MainStripControl.cs</DependentUpon>
     </EmbeddedResource>
