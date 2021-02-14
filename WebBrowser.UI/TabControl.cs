@@ -154,11 +154,19 @@ namespace WebBrowser.UI
         private void webBrowser1_DocumentCompleted(object sender, WebBrowserDocumentCompletedEventArgs e)
         {
             var item = new HistoryItem();
-            DateTime now = DateTime.Now;
-            item.URL = toolStripTextBox1.Text;
-            item.Title = webBrowser1.DocumentTitle;
-            item.Date = now;
-            HistoryManager.AddItem(item);
+            var now = DateTime.Now;
+            //Console.WriteLine("Now = " + now);
+            if(currentStateUrl != item.RepeatFix)
+            {
+                item.RepeatFix = currentStateUrl;
+                item.URL = toolStripTextBox1.Text;
+                item.Title = webBrowser1.DocumentTitle;
+                item.Date = now;
+                HistoryManager.AddItem(item);
+            } else
+            {
+                return;
+            }
         }
     }
 }
