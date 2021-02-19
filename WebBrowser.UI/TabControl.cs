@@ -41,7 +41,7 @@ namespace WebBrowser.UI
                 {
                     statusLabel.Text = "Loading...";
                     timer1.Start();
-                    toolStripProgressBar1.Value = 0;
+                    toolStripProgressBar1.Value = 1;
                 }
                 started = !started;
                 Navigate(toolStripTextBox1.Text);
@@ -66,7 +66,7 @@ namespace WebBrowser.UI
             {
                 statusLabel.Text = "Loading...";
                 timer1.Start();
-                toolStripProgressBar1.Value = 0;
+                toolStripProgressBar1.Value = 1;
             }
             started = !started;
             Navigate(toolStripTextBox1.Text);
@@ -149,6 +149,17 @@ namespace WebBrowser.UI
         private void toolStripButton3_Click(object sender, EventArgs e)
         {
             webBrowser1.Refresh();
+            if (started)
+            {
+                statusLabel.Text = "Done";
+                timer1.Stop();
+            }
+            else
+            {
+                statusLabel.Text = "Loading...";
+                timer1.Start();
+                toolStripProgressBar1.Value = 1;
+            }
         }
 
         // STOP! collaborate and listen... stops the page*
@@ -156,6 +167,8 @@ namespace WebBrowser.UI
         {
             webBrowser1.Stop();
             timer1.Stop();
+            statusLabel.Text = "Stopped";
+            started = !started;
         }
 
         private void toolStripButton8_Click(object sender, EventArgs e)
