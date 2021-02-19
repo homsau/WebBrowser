@@ -191,16 +191,22 @@
   <data name="toolStripButton8.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
-        YQUAAAAJcEhZcwAAEnQAABJ0Ad5mH3gAAAH1SURBVDhPnVNLS1tREL7u2pXgDymCKIhQMCoighg0CzG/
-        QXduBLfufZSrjXATAibY0I0JlFSigo9EtBhMIzUmhqAQEq/XvNRS8nXmmJvmqHXhwHfPOXNmvpkzM1d5
-        KpVK5WO5XNZKpVKC8Ifwm/CL9CqtrTWzf0IXaMDXRDaB2a1ZDK8Oo+NzBzodnRhbG4MaVpE1smyzVK1W
-        39fcHwnaltoEgfuHGz1aD+b35hG7isEoGrguXGP/Yh8zGzPoc/Vh+3wblMlWncQkcB25MOodRTKXbMxI
-        wk5yRwTYTe3yWZUIep29SOfTkoPFYpHOjM3zTQy4B6AXdM6ktU7QCNP4JQLGZGASnmMP7z89LaKE/xH4
-        435M+CdA3Tp9EwEX2Oqx8hMeXiWw2+3w+XzP9BIBfe4j6YjZYwmpVAo2mw3BYFDSr8fXzSfEOYPA1Lcp
-        aIeaZGQiFqNoVqsgM3Xs7I16eb+gEMtQ9DL6YhtNZDKZ+j6UCGHQPYibwg2KxeIHBUATXQQcBw6MeEZe
-        HSSeQh6k8EWYz4tikFgMw2ghRdR55ES31o25vTmcXJ2IUc7f5sXkTX+fRr+rX0wjZR2iwO9q7o+i63oz
-        FXT1LHsm/UxdK10Y/zKO5cgycrc5EfmZc6MQezsZqbT+JMI7bhVXm3QL4s2SKMpf04IDb03Tp0EAAAAA
-        SUVORK5CYII=
+        YQUAAAAJcEhZcwAAEnQAABJ0Ad5mH3gAAAH3SURBVDhPnVPdS2JREL+97T4F/SFLEAkSLGRFRBBJ+RD5
+        N9SbL0Gvvfex3FyDqwgpJfuSwuKGJfShUUuSa2ymiSSIdrv51Qfhrzknr+uptocGfvfMmTPzmzln5kov
+        pVarfa1Wq0qlUklqmvZIeCD9L9llWjsbbv+EDtCCH8l8EnPbcxhdHYXhuwFGhxETaxOQIzLyWp75LNfr
+        9c+N8GeCruUuTuD+7Uaf0oeFvQXEc3FoZQ1XpSvsX+xjdnMWA64BhM/DoEq2myQ6gevIhXHvOFKFVGtF
+        AnZSOzzBbnqX7WWBoN/Zj0wxIwSYTCZhz7B1voUh9xDUksoq6WwStEJ3fouAYTowDc+xh+nfXj6igP8R
+        +BN+TPmnQN06/RABe2Czxwxq8f27BFarFT6f75VdIKDPXTQT1XssIJ1Ow2KxIBgMCvaNxIZ+hQSrIGD7
+        aYNyqAhOOuJxymY2czLdxoK9MS/TFyViGYldxt5so45sNtvUQ8kQht3DuC5do1wuf5EAtNFBwHHgwJhn
+        7N1BYlPIBilyEWH7JT5ITOgdOsgQcx450av0Yn5vHie5Ez7KxZsin7yZXzMYdA3yaaSqQ5T4UyP8WVRV
+        bafJWj3Lnwk/U89KDybXJ2GP2lG4KfDMr4Jbhdi7yUmm9Q9VdstaxV6bbIv8zoJI0hMusgMb7bHiTAAA
+        AABJRU5ErkJggg==
 </value>
   </data>
+  <metadata name="statusStrip1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>155, 17</value>
+  </metadata>
+  <metadata name="timer1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>292, 17</value>
+  </metadata>
 </root>

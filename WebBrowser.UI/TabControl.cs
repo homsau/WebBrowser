@@ -16,6 +16,7 @@ namespace WebBrowser.UI
         static String currentStateUrl = "";
         static Stack<string> backStack = new Stack<string>();
         static Stack<string> forwardStack = new Stack<string>();
+        bool started = false;
 
         public tabControl2()
         {
@@ -32,6 +33,17 @@ namespace WebBrowser.UI
                 {
                     backStack.Push(currentStateUrl);
                 }
+                if (started)
+                {
+                    statusLabel.Text = "Done";
+                    timer1.Stop();
+                } else
+                {
+                    statusLabel.Text = "Loading...";
+                    timer1.Start();
+                    toolStripProgressBar1.Value = 0;
+                }
+                started = !started;
                 Navigate(toolStripTextBox1.Text);
                 currentStateUrl = toolStripTextBox1.Text; // stores current url
                 currUrl.Text = currentStateUrl; // stores current url in label i will delete later
@@ -45,6 +57,18 @@ namespace WebBrowser.UI
             {
                 backStack.Push(currentStateUrl);
             }
+            if (started)
+            {
+                statusLabel.Text = "Done";
+                timer1.Stop();
+            }
+            else
+            {
+                statusLabel.Text = "Loading...";
+                timer1.Start();
+                toolStripProgressBar1.Value = 0;
+            }
+            started = !started;
             Navigate(toolStripTextBox1.Text);
             currentStateUrl = toolStripTextBox1.Text; // stores current url
             currUrl.Text = currentStateUrl; // stores current url in label i will delete later
@@ -131,6 +155,7 @@ namespace WebBrowser.UI
         private void toolStripButton7_Click(object sender, EventArgs e)
         {
             webBrowser1.Stop();
+            timer1.Stop();
         }
 
         private void toolStripButton8_Click(object sender, EventArgs e)
@@ -160,6 +185,34 @@ namespace WebBrowser.UI
             item.Title = webBrowser1.DocumentTitle;
             item.Date = now;
             HistoryManager.AddItem(item);
+            //statusLabel.Text = DateTime.Now.ToString();
+        }
+
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            if(this.toolStripProgressBar1.Value == 100)
+            {
+                timer1.Stop();
+                this.started = false;
+                statusLabel.Text = "Done";
+            } else
+            {
+                this.toolStripProgressBar1.Value++;
+            }
+        }
+
+        private void webBrowser1_ProgressChanged(object sender, WebBrowserProgressChangedEventArgs e)
+        {
+            try
+            {
+                toolStripProgressBar1.Value = Convert.ToInt32(e.CurrentProgress);
+                toolStripProgressBar1.Maximum = Convert.ToInt32(e.CurrentProgress);
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
+            
         }
     }
 }
