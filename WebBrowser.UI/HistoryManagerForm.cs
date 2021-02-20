@@ -22,9 +22,75 @@ namespace WebBrowser.UI
         {
             var items = HistoryManager.GetItems();
             historyList.Items.Clear();
-
             foreach(var item in items) {
                 historyList.Items.Add(string.Format("{0} - {1} - {2}", item.Title, item.URL, item.Date));
+            }
+
+            // this list below is for the search results
+            listcollection.Clear();
+            foreach (string str in historyList.Items)
+            {
+                listcollection.Add(str);
+            }
+        }
+        
+        private void deleteButton_Click(object sender, EventArgs e)
+        {
+            var index = historyList.SelectedIndex;
+            var items = HistoryManager.GetItems();
+            HistoryManager.DeleteItem(items[index]);
+            //MessageBox.Show(index.ToString());
+            //var items = HistoryManager.GetItems();
+            //HistoryManager.DeleteItem(items[index]);
+        }
+
+        private void clearButton_Click(object sender, EventArgs e)
+        {
+            historyList.Items.Clear();
+        }
+
+        List<string> listcollection = new List<string>();
+        private void searchBox_TextChanged(object sender, EventArgs e)
+        {
+            if (string.IsNullOrEmpty(searchBox.Text) == false)
+            {
+                historyList.Items.Clear();
+                foreach(string str in listcollection)
+                {
+                    if(str.ToLower().StartsWith(searchBox.Text.ToLower()))
+                    {
+                        historyList.Items.Add(str);
+                    }
+                }
+            } else if(searchBox.Text == "")
+            {
+                historyList.Items.Clear();
+                foreach(string str in listcollection)
+                {
+                    historyList.Items.Add(str);
+                }
+            }
+        }
+        private void searchButton_Click(object sender, EventArgs e)
+        {
+            if (string.IsNullOrEmpty(searchBox.Text) == false)
+            {
+                historyList.Items.Clear();
+                foreach (string str in listcollection)
+                {
+                    if (str.ToLower().StartsWith(searchBox.Text.ToLower()))
+                    {
+                        historyList.Items.Add(str);
+                    }
+                }
+            }
+            else if (searchBox.Text == "")
+            {
+                historyList.Items.Clear();
+                foreach (string str in listcollection)
+                {
+                    historyList.Items.Add(str);
+                }
             }
         }
     }
