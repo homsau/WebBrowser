@@ -22,10 +22,40 @@ namespace WebBrowser.UI
         {
             var items = BookmarkManager.GetItems();
             bookmarkList.Items.Clear();
-
             foreach (var item in items)
             {
                 bookmarkList.Items.Add(string.Format("{0} - {1}", item.Title, item.URL));
+            }
+
+            // this list below is for the search results
+            listcollection.Clear();
+            foreach (string str in bookmarkList.Items)
+            {
+                listcollection.Add(str);
+            }
+        }
+
+        List<string> listcollection = new List<string>();
+        private void searchButton_Click(object sender, EventArgs e)
+        {
+            if (string.IsNullOrEmpty(searchBox.Text) == false)
+            {
+                bookmarkList.Items.Clear();
+                foreach (string str in listcollection)
+                {
+                    if (str.ToLower().StartsWith(searchBox.Text.ToLower())) // Ignore casing
+                    {
+                        bookmarkList.Items.Add(str);
+                    }
+                }
+            }
+            else if (searchBox.Text == "")
+            {
+                bookmarkList.Items.Clear();
+                foreach (string str in listcollection)
+                {
+                    bookmarkList.Items.Add(str);
+                }
             }
         }
     }

@@ -50,14 +50,14 @@ namespace WebBrowser.UI
         }
 
         List<string> listcollection = new List<string>();
-        private void searchBox_TextChanged(object sender, EventArgs e)
+        private void searchBox_TextChanged(object sender, EventArgs e) // This one updates as the textbox updates
         {
             if (string.IsNullOrEmpty(searchBox.Text) == false)
             {
                 historyList.Items.Clear();
                 foreach(string str in listcollection)
                 {
-                    if(str.ToLower().StartsWith(searchBox.Text.ToLower()))
+                    if(str.ToLower().StartsWith(searchBox.Text.ToLower())) // Ignore casing
                     {
                         historyList.Items.Add(str);
                     }
@@ -71,14 +71,14 @@ namespace WebBrowser.UI
                 }
             }
         }
-        private void searchButton_Click(object sender, EventArgs e)
+        private void searchButton_Click(object sender, EventArgs e) // This one updates the filter when you hit the button
         {
             if (string.IsNullOrEmpty(searchBox.Text) == false)
             {
                 historyList.Items.Clear();
                 foreach (string str in listcollection)
                 {
-                    if (str.ToLower().StartsWith(searchBox.Text.ToLower()))
+                    if (str.ToLower().StartsWith(searchBox.Text.ToLower())) // Ignore casing
                     {
                         historyList.Items.Add(str);
                     }
