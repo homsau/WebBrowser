@@ -179,7 +179,6 @@ namespace WebBrowser.UI
         {
             var itemsForm = new BookmarkManagerForm();
             currentStateUrl = toolStripTextBox1.Text;
-            //MessageBox.Show(currentStateUrl);
             var item = new BookmarkItem();
             item.URL = toolStripTextBox1.Text;
             item.Title = webBrowser1.DocumentTitle;
@@ -193,10 +192,10 @@ namespace WebBrowser.UI
             {
                 var item = new HistoryItem();
                 var now = DateTime.Now;
-                //Console.WriteLine("Now = " + now);
                 item.URL = toolStripTextBox1.Text;
                 item.Title = webBrowser1.DocumentTitle;
                 item.Date = now;
+                Console.WriteLine(item.Date);
                 HistoryManager.AddItem(item);
             }
         }
@@ -210,16 +209,18 @@ namespace WebBrowser.UI
                 statusLabel.Text = "Done";
             } else
             {
-                this.toolStripProgressBar1.Value++;
+                //this.toolStripProgressBar1.Value++;
+                //removed this cause it was messing things up
             }
         }
 
         private void webBrowser1_ProgressChanged(object sender, WebBrowserProgressChangedEventArgs e)
         {
+            //if current value and max are ex
             try
             {
                 toolStripProgressBar1.Value = Convert.ToInt32(e.CurrentProgress);
-                toolStripProgressBar1.Maximum = Convert.ToInt32(e.CurrentProgress);
+                toolStripProgressBar1.Maximum = Convert.ToInt32(e.MaximumProgress);
             }
             catch (Exception ex)
             {
