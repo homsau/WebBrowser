@@ -45,8 +45,7 @@ namespace WebBrowser.UI
             "Id",
             "URL",
             "Title",
-            "Date",
-            "RepeatFix"});
+            "Date"});
             this.historyList.Location = new System.Drawing.Point(0, 0);
             this.historyList.Name = "historyList";
             this.historyList.Size = new System.Drawing.Size(800, 450);

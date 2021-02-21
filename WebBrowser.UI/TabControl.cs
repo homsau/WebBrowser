@@ -218,6 +218,7 @@ namespace WebBrowser.UI
         private void toolStripButton4_Click(object sender, EventArgs e)
         {
             var home = "google.com";
+            toolStripTextBox1.Text = home;
             if (currentStateUrl != "")
             {
                 backStack.Push(currentStateUrl);
