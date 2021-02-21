@@ -184,6 +184,7 @@ namespace WebBrowser.UI
             this.webBrowser1.Size = new System.Drawing.Size(750, 393);
             this.webBrowser1.TabIndex = 4;
             this.webBrowser1.DocumentCompleted += new System.Windows.Forms.WebBrowserDocumentCompletedEventHandler(this.webBrowser1_DocumentCompleted);
+            this.webBrowser1.Navigated += new System.Windows.Forms.WebBrowserNavigatedEventHandler(this.webBrowser1_Navigated_1);
             this.webBrowser1.ProgressChanged += new System.Windows.Forms.WebBrowserProgressChangedEventHandler(this.webBrowser1_ProgressChanged);
             this.webBrowser1.ContextMenuStripChanged += new System.EventHandler(this.timer1_Tick);
             // 
@@ -232,7 +233,6 @@ namespace WebBrowser.UI
             this.toolStripProgressBar1.Minimum = 1;
             this.toolStripProgressBar1.Name = "toolStripProgressBar1";
             this.toolStripProgressBar1.Size = new System.Drawing.Size(200, 18);
-            this.toolStripProgressBar1.Step = 1;
             this.toolStripProgressBar1.Value = 1;
             // 
             // statusLabel
@@ -249,8 +249,7 @@ namespace WebBrowser.UI
             // 
             this.hoverLinkLabel.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
             this.hoverLinkLabel.Name = "hoverLinkLabel";
-            this.hoverLinkLabel.Size = new System.Drawing.Size(108, 20);
-            this.hoverLinkLabel.Text = "hoverLinkLabel";
+            this.hoverLinkLabel.Size = new System.Drawing.Size(0, 20);
             // 
             // tabControl2
             // 

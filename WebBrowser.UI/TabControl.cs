@@ -131,6 +131,18 @@ namespace WebBrowser.UI
             }
         }
 
+        private void webBrowser1_Navigated_1(object sender, WebBrowserNavigatedEventArgs e)
+        {
+            //toolStripTextBox1.Text = webBrowser1.Url.ToString();
+            this.webBrowser1.Document.MouseOver += new HtmlElementEventHandler(this.Browser_Mouse_Moved);
+        }
+        // MOUSEOVER LABEL
+        private void Browser_Mouse_Moved(object sender, HtmlElementEventArgs e)
+        {
+            string element = webBrowser1.Document.GetElementFromPoint(e.ClientMousePosition).GetAttribute("href");
+            hoverLinkLabel.Text = element;
+        }
+
         // refreshes page
         private void toolStripButton3_Click(object sender, EventArgs e)
         {
@@ -215,7 +227,7 @@ namespace WebBrowser.UI
             }
         }
 
-        private void toolStripButton4_Click(object sender, EventArgs e)
+        private void toolStripButton4_Click(object sender, EventArgs e) //home button
         {
             var home = "google.com";
             toolStripTextBox1.Text = home;
