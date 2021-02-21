@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using WebBrowser.Logic;
 
 /*
  * Future Features:
@@ -87,6 +88,15 @@ namespace WebBrowser.UI
         {
             var itemsForm = new BookmarkManagerForm();
             itemsForm.ShowDialog();
+        }
+
+        private void clearHistoryToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            var hm = new HistoryManager();
+            foreach (var item in HistoryManager.GetItems())
+            {
+                hm.DeleteItem(item.Id); //deletes from db
+            }
         }
     }
 }
