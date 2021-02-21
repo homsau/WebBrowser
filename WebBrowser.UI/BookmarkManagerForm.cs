@@ -71,6 +71,13 @@ namespace WebBrowser.UI
                     bm.DeleteItem(item.Id);
                 }
             }
+
+            //reload after delete
+            listcollection.Clear();
+            foreach (string str in bookmarkList.Items)
+            {
+                listcollection.Add(str);
+            }
         }
     }
 }

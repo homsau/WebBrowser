@@ -45,6 +45,13 @@ namespace WebBrowser.UI
                     hm.DeleteItem(item.Id);
                 }
             }
+
+            //reload after delete
+            listcollection.Clear();
+            foreach (string str in historyList.Items)
+            {
+                listcollection.Add(str);
+            }
         }
 
         private void clearButton_Click(object sender, EventArgs e)
@@ -58,27 +65,6 @@ namespace WebBrowser.UI
         }
 
         List<string> listcollection = new List<string>();
-        /*private void searchBox_TextChanged(object sender, EventArgs e) // This one updates as the textbox updates
-        {
-            if (string.IsNullOrEmpty(searchBox.Text) == false)
-            {
-                historyList.Items.Clear();
-                foreach(string str in listcollection)
-                {
-                    if(str.ToLower().StartsWith(searchBox.Text.ToLower())) // Ignore casing
-                    {
-                        historyList.Items.Add(str);
-                    }
-                }
-            } else if(searchBox.Text == "")
-            {
-                historyList.Items.Clear();
-                foreach(string str in listcollection)
-                {
-                    historyList.Items.Add(str);
-                }
-            }
-        }*/
         private void searchButton_Click(object sender, EventArgs e) // This one updates the filter when you hit the button
         {
             if (string.IsNullOrEmpty(searchBox.Text) == false)
