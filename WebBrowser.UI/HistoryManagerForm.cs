@@ -52,17 +52,13 @@ namespace WebBrowser.UI
             var hm = new HistoryManager();
             foreach (var item in HistoryManager.GetItems())
             {
-                for (int i = historyList.Items.Count - 1; i >= 0; i--)
-                {
-                    historyList.Items.RemoveAt(historyList.Items.Count);
-                    hm.DeleteItem(item.Id);
-                }
+                hm.DeleteItem(item.Id); //deletes from db
             }
-            //historyList.Items.Clear();
+            historyList.Items.Clear();
         }
 
         List<string> listcollection = new List<string>();
-        private void searchBox_TextChanged(object sender, EventArgs e) // This one updates as the textbox updates
+        /*private void searchBox_TextChanged(object sender, EventArgs e) // This one updates as the textbox updates
         {
             if (string.IsNullOrEmpty(searchBox.Text) == false)
             {
@@ -82,7 +78,7 @@ namespace WebBrowser.UI
                     historyList.Items.Add(str);
                 }
             }
-        }
+        }*/
         private void searchButton_Click(object sender, EventArgs e) // This one updates the filter when you hit the button
         {
             if (string.IsNullOrEmpty(searchBox.Text) == false)

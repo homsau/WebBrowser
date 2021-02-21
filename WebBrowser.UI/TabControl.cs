@@ -163,7 +163,7 @@ namespace WebBrowser.UI
             itemsForm.ShowDialog();
         }
 
-        private void toolStripButton6_Click(object sender, EventArgs e)
+        private void toolStripButton6_Click(object sender, EventArgs e) //bookmark button
         {
             var itemsForm = new BookmarkManagerForm();
             currentStateUrl = toolStripTextBox1.Text;
@@ -175,16 +175,18 @@ namespace WebBrowser.UI
             itemsForm.ShowDialog();
         }
 
-        private void webBrowser1_DocumentCompleted(object sender, WebBrowserDocumentCompletedEventArgs e)
+        private void webBrowser1_DocumentCompleted(object sender, WebBrowserDocumentCompletedEventArgs e) //history bit
         {
-            var item = new HistoryItem();
-            var now = DateTime.Now;
-            //Console.WriteLine("Now = " + now);
-            item.URL = toolStripTextBox1.Text;
-            item.Title = webBrowser1.DocumentTitle;
-            item.Date = now;
-            HistoryManager.AddItem(item);
-            //statusLabel.Text = DateTime.Now.ToString();
+            if (e.Url.Equals(webBrowser1.Url) && webBrowser1.ReadyState == WebBrowserReadyState.Complete)
+            {
+                var item = new HistoryItem();
+                var now = DateTime.Now;
+                //Console.WriteLine("Now = " + now);
+                item.URL = toolStripTextBox1.Text;
+                item.Title = webBrowser1.DocumentTitle;
+                item.Date = now;
+                HistoryManager.AddItem(item);
+            }
         }
 
         private void timer1_Tick(object sender, EventArgs e)
@@ -216,7 +218,25 @@ namespace WebBrowser.UI
         private void toolStripButton4_Click(object sender, EventArgs e)
         {
             var home = "google.com";
+            if (currentStateUrl != "")
+            {
+                backStack.Push(currentStateUrl);
+            }
+            if (started)
+            {
+                statusLabel.Text = "Done";
+                timer1.Stop();
+            }
+            else
+            {
+                statusLabel.Text = "Loading...";
+                timer1.Start();
+                toolStripProgressBar1.Value = 1;
+            }
+            started = !started;
             Navigate(home);
+            currentStateUrl = toolStripTextBox1.Text; // stores current url
+            currUrl.Text = currentStateUrl; // stores current url in label i will delete later
         }
     }
 }

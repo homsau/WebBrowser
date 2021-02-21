@@ -88,7 +88,6 @@ namespace WebBrowser.UI
             this.searchBox.Name = "searchBox";
             this.searchBox.Size = new System.Drawing.Size(100, 22);
             this.searchBox.TabIndex = 4;
-            this.searchBox.TextChanged += new System.EventHandler(this.searchBox_TextChanged);
             // 
             // HistoryManagerForm
             // 
