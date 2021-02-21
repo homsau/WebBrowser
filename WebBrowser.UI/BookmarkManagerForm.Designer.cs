@@ -41,6 +41,7 @@ namespace WebBrowser.UI
             this.bookmarkList.FormattingEnabled = true;
             this.bookmarkList.ItemHeight = 16;
             this.bookmarkList.Items.AddRange(new object[] {
+            "Id",
             "URL",
             "Title"});
             this.bookmarkList.Location = new System.Drawing.Point(0, 0);
@@ -73,6 +74,7 @@ namespace WebBrowser.UI
             this.deleteButton.TabIndex = 5;
             this.deleteButton.Text = "Delete";
             this.deleteButton.UseVisualStyleBackColor = true;
+            this.deleteButton.Click += new System.EventHandler(this.deleteButton_Click);
             // 
             // BookmarkManagerForm
             // 

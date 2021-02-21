@@ -91,13 +91,6 @@ namespace WebBrowser.UI
                 Navigate(currentStateUrl);
                 backStack.Pop();
             }
-            /*
-            if (webBrowser1.CanGoBack)
-            {
-                backStack.Push(currentStateUrl);
-                BS.Text = currentStateUrl;
-                webBrowser1.GoBack();
-            }*/
         }
 
         // FORWARD BUTTON
@@ -116,13 +109,6 @@ namespace WebBrowser.UI
                 Navigate(currentStateUrl);
                 forwardStack.Pop();
             }
-            /*
-            if (webBrowser1.CanGoForward)
-            {
-                backStack.Push(currentStateUrl);
-                FS.Text = currentStateUrl;
-                webBrowser1.GoForward();
-            }*/
         }
 
         // navigates to the given url if it's valid
@@ -225,7 +211,12 @@ namespace WebBrowser.UI
             {
                 Console.WriteLine(ex.Message);
             }
-            
+        }
+
+        private void toolStripButton4_Click(object sender, EventArgs e)
+        {
+            var home = "google.com";
+            Navigate(home);
         }
     }
 }

@@ -36,17 +36,29 @@ namespace WebBrowser.UI
         
         private void deleteButton_Click(object sender, EventArgs e)
         {
-            var index = historyList.SelectedIndex;
-            var items = HistoryManager.GetItems();
-            HistoryManager.DeleteItem(items[index]);
-            //MessageBox.Show(index.ToString());
-            //var items = HistoryManager.GetItems();
-            //HistoryManager.DeleteItem(items[index]);
+            var hm = new HistoryManager();
+            foreach(var item in HistoryManager.GetItems())
+            {
+                for (int i = historyList.SelectedIndices.Count - 1; i >= 0; i--)
+                {
+                    historyList.Items.RemoveAt(historyList.SelectedIndices[i]);
+                    hm.DeleteItem(item.Id);
+                }
+            }
         }
 
         private void clearButton_Click(object sender, EventArgs e)
         {
-            historyList.Items.Clear();
+            var hm = new HistoryManager();
+            foreach (var item in HistoryManager.GetItems())
+            {
+                for (int i = historyList.Items.Count - 1; i >= 0; i--)
+                {
+                    historyList.Items.RemoveAt(historyList.Items.Count);
+                    hm.DeleteItem(item.Id);
+                }
+            }
+            //historyList.Items.Clear();
         }
 
         List<string> listcollection = new List<string>();

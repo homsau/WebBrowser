@@ -58,5 +58,19 @@ namespace WebBrowser.UI
                 }
             }
         }
+
+        private void deleteButton_Click(object sender, EventArgs e)
+        {
+            
+            var bm = new BookmarkManager();
+            foreach (var item in BookmarkManager.GetItems())
+            {
+                for (int i = bookmarkList.SelectedIndices.Count - 1; i >= 0; i--)
+                {
+                bookmarkList.Items.RemoveAt(bookmarkList.SelectedIndices[i]);
+                    bm.DeleteItem(item.Id);
+                }
+            }
+        }
     }
 }

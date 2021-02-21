@@ -32,11 +32,10 @@ namespace WebBrowser.Logic
             adapter.Insert(item.URL, item.Title, item.Date);
         }
         
-        public static void DeleteItem(HistoryItem item)
+        public void DeleteItem(int Id)
         {
             var adapter = new HistoryTableAdapter();
-            adapter.Delete1(item.Id);
+            adapter.Delete1(Id);
         }
-
     }
 }
