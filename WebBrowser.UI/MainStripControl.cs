@@ -52,9 +52,9 @@ namespace WebBrowser.UI
             MasterTabControl.TabPages.Remove(MasterTabControl.SelectedTab);
             if (tIndex >= 0 && tIndex <= MasterTabControl.TabPages.Count)
             {
-                MasterTabControl.SelectTab(tIndex);
+                //MasterTabControl.SelectTab(tIndex);
+                this.MasterTabControl.TabPages.Remove(MasterTabControl.SelectedTab);
             } 
-            
         }
 
         private void MasterTabControl_KeyDown(object sender, KeyEventArgs e)
