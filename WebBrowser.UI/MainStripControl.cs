@@ -45,6 +45,7 @@ namespace WebBrowser.UI
             tp.Controls.Add(webControl);
             this.MasterTabControl.TabPages.Add(tp);
             this.MasterTabControl.SelectTab(tp);
+            this.MasterTabControl.Focus();
         }
 
         private void closeCurrentTabToolStripMenuItem_Click(object sender, EventArgs e)
@@ -52,8 +53,18 @@ namespace WebBrowser.UI
             var tIndex = MasterTabControl.TabIndex;
             if (tIndex >= 0 && tIndex < MasterTabControl.TabPages.Count)
             {
+                var tabIndex = this.MasterTabControl.SelectedIndex;
                 this.MasterTabControl.TabPages.Remove(MasterTabControl.SelectedTab);
-            } 
+                if (tabIndex >= 1) // logic to prevent trying to close more tabs than exist
+                {
+                    this.MasterTabControl.SelectTab(tabIndex - 1);
+                }
+                else
+                {
+                    this.MasterTabControl.SelectTab(tabIndex);
+                }
+                this.MasterTabControl.Focus();
+            }
         }
 
         // new/close tab with key bindings
