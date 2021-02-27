@@ -71,7 +71,7 @@ namespace WebBrowser.UI
             this.toolStripButton7});
             this.tabControl3.Location = new System.Drawing.Point(0, 0);
             this.tabControl3.Name = "tabControl3";
-            this.tabControl3.Size = new System.Drawing.Size(750, 27);
+            this.tabControl3.Size = new System.Drawing.Size(750, 31);
             this.tabControl3.TabIndex = 2;
             this.tabControl3.Text = "toolStrip1";
             // 
@@ -81,7 +81,7 @@ namespace WebBrowser.UI
             this.toolStripButton2.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton2.Image")));
             this.toolStripButton2.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.toolStripButton2.Name = "toolStripButton2";
-            this.toolStripButton2.Size = new System.Drawing.Size(29, 24);
+            this.toolStripButton2.Size = new System.Drawing.Size(29, 28);
             this.toolStripButton2.Text = "Back";
             this.toolStripButton2.Click += new System.EventHandler(this.toolStripButton2_Click);
             // 
@@ -168,20 +168,20 @@ namespace WebBrowser.UI
             // TabControl1
             // 
             this.TabControl1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.TabControl1.Location = new System.Drawing.Point(0, 27);
+            this.TabControl1.Location = new System.Drawing.Point(0, 31);
             this.TabControl1.MinimumSize = new System.Drawing.Size(20, 20);
             this.TabControl1.Name = "TabControl1";
-            this.TabControl1.Size = new System.Drawing.Size(750, 393);
+            this.TabControl1.Size = new System.Drawing.Size(750, 389);
             this.TabControl1.TabIndex = 3;
             // 
             // webBrowser1
             // 
             this.webBrowser1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.webBrowser1.Location = new System.Drawing.Point(0, 27);
+            this.webBrowser1.Location = new System.Drawing.Point(0, 31);
             this.webBrowser1.MinimumSize = new System.Drawing.Size(20, 20);
             this.webBrowser1.Name = "webBrowser1";
             this.webBrowser1.ScriptErrorsSuppressed = true;
-            this.webBrowser1.Size = new System.Drawing.Size(750, 393);
+            this.webBrowser1.Size = new System.Drawing.Size(750, 389);
             this.webBrowser1.TabIndex = 4;
             this.webBrowser1.DocumentCompleted += new System.Windows.Forms.WebBrowserDocumentCompletedEventHandler(this.webBrowser1_DocumentCompleted);
             this.webBrowser1.Navigated += new System.Windows.Forms.WebBrowserNavigatedEventHandler(this.webBrowser1_Navigated_1);
@@ -258,6 +258,7 @@ namespace WebBrowser.UI
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoSize = true;
             this.Controls.Add(this.statusStrip1);
             this.Controls.Add(this.FS);
             this.Controls.Add(this.BS);
@@ -265,6 +266,7 @@ namespace WebBrowser.UI
             this.Controls.Add(this.webBrowser1);
             this.Controls.Add(this.TabControl1);
             this.Controls.Add(this.tabControl3);
+            this.Margin = new System.Windows.Forms.Padding(0);
             this.Name = "tabControl2";
             this.Size = new System.Drawing.Size(750, 420);
             this.tabControl3.ResumeLayout(false);

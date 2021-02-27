@@ -35,11 +35,14 @@ namespace WebBrowser.UI
                 "\nOne thing I want to be sure to implement is a 'Dark' mode\n\nStudent ID: 902416606\n");
         }
 
+        //NEW TAB FROM MENU
         private void newTabToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            var tp = new TabPage();
+            tabControl2 webControl = new tabControl2();
+            webControl.Dock = DockStyle.Fill;
+            TabPage tp = new TabPage();
             tp.Text = "New Tab";
-            tp.Controls.Add(new tabControl2());
+            tp.Controls.Add(webControl);
             MasterTabControl.TabPages.Add(tp);
             MasterTabControl.SelectTab(MasterTabControl.TabPages.Count - 1);
         }
@@ -50,7 +53,7 @@ namespace WebBrowser.UI
             // was thinking of ways to get my tabs to go to the properly selected one upon open/close
             var tIndex = MasterTabControl.TabIndex;
             MasterTabControl.TabPages.Remove(MasterTabControl.SelectedTab);
-            if (tIndex >= 0 && tIndex <= MasterTabControl.TabPages.Count)
+            if (tIndex >= 0 && tIndex < MasterTabControl.TabPages.Count)
             {
                 //MasterTabControl.SelectTab(tIndex);
                 this.MasterTabControl.TabPages.Remove(MasterTabControl.SelectedTab);
@@ -59,21 +62,20 @@ namespace WebBrowser.UI
 
         private void MasterTabControl_KeyDown(object sender, KeyEventArgs e)
         {
-            var tp = new TabPage();
+            tabControl2 webControl = new tabControl2();
+            webControl.Dock = DockStyle.Fill;
+            TabPage tp = new TabPage();
             tp.Text = "New Tab";
-            tp.Controls.Add(new tabControl2());
+            tp.Controls.Add(webControl);
             if (e.Control && (e.KeyCode == Keys.T)) //opens new tab
             {
                 this.MasterTabControl.TabPages.Add(tp);
             }
             if (e.Control && (e.KeyCode == Keys.W)) //closes tab
             {
-                this.MasterTabControl.TabPages.Remove(MasterTabControl.SelectedTab);
-                if (MasterTabControl.TabPages.Count > 1) 
-                // I THINK THIS CODE WILL LATER HELP ME AUTO SELECT THE CORRECT TAB AFTER CLOSING
-                // AT LEAST HELP WITH BRAINSTORMING
+                if (MasterTabControl.TabPages.Count >= 1) 
                 {
-                   // MasterTabControl.SelectTab(MasterTabControl.TabPages.Count - 1);
+                    this.MasterTabControl.TabPages.Remove(MasterTabControl.SelectedTab);
                 }
             }
         }
