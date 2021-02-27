@@ -32,7 +32,7 @@ namespace WebBrowser.UI
         {
             MessageBox.Show("Hey there, my name is James Cowart and this is my first browser!\n" +
                 "I've made a lot of websites and a few apps before, so I'm excited about this.\n" +
-                "\nOne thing I want to be sure to implement is a 'Dark' mode\n\nStudent ID: 902416606\n");
+                "\nOne thing I want to implement in the future is a 'Dark' mode\n\nStudent ID: 902416606\n");
         }
 
         //NEW TAB FROM MENU
@@ -57,7 +57,7 @@ namespace WebBrowser.UI
         }
 
         // new/close tab with key bindings
-        private void MasterTabControl_KeyDown(object sender, KeyEventArgs e)
+        public void MasterTabControl_KeyDown(object sender, KeyEventArgs e)
         {
             tabControl2 webControl = new tabControl2();
             webControl.Dock = DockStyle.Fill;
@@ -68,12 +68,22 @@ namespace WebBrowser.UI
             {
                 this.MasterTabControl.TabPages.Add(tp);
                 this.MasterTabControl.SelectTab(tp);
+                this.MasterTabControl.Focus(); // keeps tab control focused so we can add/close more tabs
             }
             if (e.Control && (e.KeyCode == Keys.W)) //closes tab
             {
-                if (MasterTabControl.TabPages.Count >= 1) 
+                if (MasterTabControl.TabPages.Count > 1) 
                 {
+                    var tabIndex = this.MasterTabControl.SelectedIndex;
                     this.MasterTabControl.TabPages.Remove(MasterTabControl.SelectedTab);
+                    if (tabIndex >= 1) // logic to prevent trying to close more tabs than exist
+                    {
+                        this.MasterTabControl.SelectTab(tabIndex - 1);
+                    } else
+                    {
+                        this.MasterTabControl.SelectTab(tabIndex);
+                    }
+                    this.MasterTabControl.Focus();
                 }
             }
         }

@@ -81,7 +81,7 @@
             // 
             this.newTabToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("newTabToolStripMenuItem.Image")));
             this.newTabToolStripMenuItem.Name = "newTabToolStripMenuItem";
-            this.newTabToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.newTabToolStripMenuItem.Size = new System.Drawing.Size(222, 26);
             this.newTabToolStripMenuItem.Text = "New Tab";
             this.newTabToolStripMenuItem.Click += new System.EventHandler(this.newTabToolStripMenuItem_Click);
             // 
@@ -89,7 +89,7 @@
             // 
             this.closeCurrentTabToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("closeCurrentTabToolStripMenuItem.Image")));
             this.closeCurrentTabToolStripMenuItem.Name = "closeCurrentTabToolStripMenuItem";
-            this.closeCurrentTabToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.closeCurrentTabToolStripMenuItem.Size = new System.Drawing.Size(222, 26);
             this.closeCurrentTabToolStripMenuItem.Text = "Close Current Tab";
             this.closeCurrentTabToolStripMenuItem.Click += new System.EventHandler(this.closeCurrentTabToolStripMenuItem_Click);
             // 
@@ -97,27 +97,27 @@
             // 
             this.savePageAsHTMLToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("savePageAsHTMLToolStripMenuItem.Image")));
             this.savePageAsHTMLToolStripMenuItem.Name = "savePageAsHTMLToolStripMenuItem";
-            this.savePageAsHTMLToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.savePageAsHTMLToolStripMenuItem.Size = new System.Drawing.Size(222, 26);
             this.savePageAsHTMLToolStripMenuItem.Text = "Save Page As HTML";
             // 
             // printPageToolStripMenuItem
             // 
             this.printPageToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("printPageToolStripMenuItem.Image")));
             this.printPageToolStripMenuItem.Name = "printPageToolStripMenuItem";
-            this.printPageToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.printPageToolStripMenuItem.Size = new System.Drawing.Size(222, 26);
             this.printPageToolStripMenuItem.Text = "Print Page";
             this.printPageToolStripMenuItem.Click += new System.EventHandler(this.printPageToolStripMenuItem_Click);
             // 
             // toolStripSeparator1
             // 
             this.toolStripSeparator1.Name = "toolStripSeparator1";
-            this.toolStripSeparator1.Size = new System.Drawing.Size(221, 6);
+            this.toolStripSeparator1.Size = new System.Drawing.Size(219, 6);
             // 
             // exitWebBrowserToolStripMenuItem
             // 
             this.exitWebBrowserToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("exitWebBrowserToolStripMenuItem.Image")));
             this.exitWebBrowserToolStripMenuItem.Name = "exitWebBrowserToolStripMenuItem";
-            this.exitWebBrowserToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.exitWebBrowserToolStripMenuItem.Size = new System.Drawing.Size(222, 26);
             this.exitWebBrowserToolStripMenuItem.Text = "Exit Web Browser";
             this.exitWebBrowserToolStripMenuItem.Click += new System.EventHandler(this.exitWebBrowserToolStripMenuItem_Click);
             // 
@@ -135,7 +135,7 @@
             // 
             this.manageHistoryToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("manageHistoryToolStripMenuItem.Image")));
             this.manageHistoryToolStripMenuItem.Name = "manageHistoryToolStripMenuItem";
-            this.manageHistoryToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.manageHistoryToolStripMenuItem.Size = new System.Drawing.Size(216, 26);
             this.manageHistoryToolStripMenuItem.Text = "Manage History";
             this.manageHistoryToolStripMenuItem.Click += new System.EventHandler(this.manageHistoryToolStripMenuItem_Click);
             // 
@@ -143,7 +143,7 @@
             // 
             this.manageBoomarksToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("manageBoomarksToolStripMenuItem.Image")));
             this.manageBoomarksToolStripMenuItem.Name = "manageBoomarksToolStripMenuItem";
-            this.manageBoomarksToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.manageBoomarksToolStripMenuItem.Size = new System.Drawing.Size(216, 26);
             this.manageBoomarksToolStripMenuItem.Text = "Manage Boomarks";
             this.manageBoomarksToolStripMenuItem.Click += new System.EventHandler(this.manageBoomarksToolStripMenuItem_Click);
             // 
@@ -151,7 +151,7 @@
             // 
             this.clearHistoryToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("clearHistoryToolStripMenuItem.Image")));
             this.clearHistoryToolStripMenuItem.Name = "clearHistoryToolStripMenuItem";
-            this.clearHistoryToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.clearHistoryToolStripMenuItem.Size = new System.Drawing.Size(216, 26);
             this.clearHistoryToolStripMenuItem.Text = "Clear History";
             this.clearHistoryToolStripMenuItem.Click += new System.EventHandler(this.clearHistoryToolStripMenuItem_Click);
             // 
@@ -167,7 +167,7 @@
             // 
             this.aboutToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("aboutToolStripMenuItem.Image")));
             this.aboutToolStripMenuItem.Name = "aboutToolStripMenuItem";
-            this.aboutToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.aboutToolStripMenuItem.Size = new System.Drawing.Size(133, 26);
             this.aboutToolStripMenuItem.Text = "About";
             this.aboutToolStripMenuItem.Click += new System.EventHandler(this.aboutToolStripMenuItem_Click);
             // 

@@ -53,7 +53,7 @@ namespace WebBrowser.UI
             // 
             // deleteButton
             // 
-            this.deleteButton.Location = new System.Drawing.Point(605, 415);
+            this.deleteButton.Location = new System.Drawing.Point(605, 407);
             this.deleteButton.Name = "deleteButton";
             this.deleteButton.Size = new System.Drawing.Size(75, 23);
             this.deleteButton.TabIndex = 1;
@@ -63,7 +63,7 @@ namespace WebBrowser.UI
             // 
             // clearButton
             // 
-            this.clearButton.Location = new System.Drawing.Point(686, 415);
+            this.clearButton.Location = new System.Drawing.Point(686, 407);
             this.clearButton.Name = "clearButton";
             this.clearButton.Size = new System.Drawing.Size(102, 23);
             this.clearButton.TabIndex = 2;
@@ -73,7 +73,7 @@ namespace WebBrowser.UI
             // 
             // searchButton
             // 
-            this.searchButton.Location = new System.Drawing.Point(524, 415);
+            this.searchButton.Location = new System.Drawing.Point(524, 407);
             this.searchButton.Name = "searchButton";
             this.searchButton.Size = new System.Drawing.Size(75, 23);
             this.searchButton.TabIndex = 3;
@@ -83,7 +83,7 @@ namespace WebBrowser.UI
             // 
             // searchBox
             // 
-            this.searchBox.Location = new System.Drawing.Point(418, 416);
+            this.searchBox.Location = new System.Drawing.Point(418, 408);
             this.searchBox.Name = "searchBox";
             this.searchBox.Size = new System.Drawing.Size(100, 22);
             this.searchBox.TabIndex = 4;

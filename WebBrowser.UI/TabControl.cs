@@ -37,11 +37,11 @@ namespace WebBrowser.UI
                 {
                     statusLabel.Text = "Done";
                     timer1.Stop();
-                } else
+                } else if (!started)
                 {
                     statusLabel.Text = "Loading...";
                     timer1.Start();
-                    toolStripProgressBar1.Value = 1;
+                    toolStripProgressBar1.Value += 1;
                 }
                 started = !started;
                 Navigate(toolStripTextBox1.Text);
@@ -49,7 +49,7 @@ namespace WebBrowser.UI
                 currUrl.Text = currentStateUrl; // stores current url in label i will delete later
             }
         }
-
+        
         // PRESSING GO BUTTON
         private void toolStripButton5_Click(object sender, EventArgs e)
         {
@@ -66,7 +66,7 @@ namespace WebBrowser.UI
             {
                 statusLabel.Text = "Loading...";
                 timer1.Start();
-                toolStripProgressBar1.Value = 1;
+                toolStripProgressBar1.Value += 1;
             }
             started = !started;
             Navigate(toolStripTextBox1.Text);
@@ -139,8 +139,20 @@ namespace WebBrowser.UI
         // MOUSEOVER LABEL
         private void Browser_Mouse_Moved(object sender, HtmlElementEventArgs e)
         {
-            string element = webBrowser1.Document.GetElementFromPoint(e.ClientMousePosition).GetAttribute("href");
-            hoverLinkLabel.Text = element;
+            HtmlElement element = webBrowser1.Document.GetElementFromPoint(e.ClientMousePosition); // make html element from mouse position
+            string hoverUrl = element.GetAttribute("href").ToString(); // make a string from element's href
+            if (element.GetAttribute("href").ToString() == null)
+            {
+                if (element.Parent != null)
+                {
+                    hoverUrl = element.Parent.GetAttribute("href").ToString();
+                }
+            }
+            //richTextBox1.Clear();
+            //richTextBox1.Text = hoverUrl;
+            //hoverLinkLabel.Text = richTextBox1.Text;
+            hoverLinkLabel.Text = hoverUrl;
+            Console.WriteLine("url: " + hoverUrl + "\n");
         }
 
         // refreshes page
@@ -156,8 +168,9 @@ namespace WebBrowser.UI
             {
                 statusLabel.Text = "Loading...";
                 timer1.Start();
-                toolStripProgressBar1.Value = 1;
+                toolStripProgressBar1.Value += 1;
             }
+            started = !started;
         }
 
         // STOP! collaborate and listen... stops the page*
@@ -208,6 +221,7 @@ namespace WebBrowser.UI
                 this.started = false;
                 statusLabel.Text = "Done";
             }
+            this.toolStripProgressBar1.Value = 0;
         }
 
         private void webBrowser1_ProgressChanged(object sender, WebBrowserProgressChangedEventArgs e)
@@ -241,12 +255,14 @@ namespace WebBrowser.UI
             {
                 statusLabel.Text = "Loading...";
                 timer1.Start();
-                toolStripProgressBar1.Value = 1;
+                toolStripProgressBar1.Value += 1;
             }
             started = !started;
             Navigate(home);
-            //currentStateUrl = toolStripTextBox1.Text; // stores current url
-            //currUrl.Text = currentStateUrl; // stores current url in label i will delete later
+            currentStateUrl = toolStripTextBox1.Text; // stores current url
+            currUrl.Text = currentStateUrl; // stores current url in label i will delete later
         }
+
+       
     }
 }
