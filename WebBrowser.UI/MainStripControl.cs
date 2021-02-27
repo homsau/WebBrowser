@@ -43,23 +43,20 @@ namespace WebBrowser.UI
             TabPage tp = new TabPage();
             tp.Text = "New Tab";
             tp.Controls.Add(webControl);
-            MasterTabControl.TabPages.Add(tp);
-            MasterTabControl.SelectTab(MasterTabControl.TabPages.Count - 1);
+            this.MasterTabControl.TabPages.Add(tp);
+            this.MasterTabControl.SelectTab(tp);
         }
 
         private void closeCurrentTabToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            // this isn't done but I feel like this section will help me later
-            // was thinking of ways to get my tabs to go to the properly selected one upon open/close
             var tIndex = MasterTabControl.TabIndex;
-            MasterTabControl.TabPages.Remove(MasterTabControl.SelectedTab);
             if (tIndex >= 0 && tIndex < MasterTabControl.TabPages.Count)
             {
-                //MasterTabControl.SelectTab(tIndex);
                 this.MasterTabControl.TabPages.Remove(MasterTabControl.SelectedTab);
             } 
         }
 
+        // new/close tab with key bindings
         private void MasterTabControl_KeyDown(object sender, KeyEventArgs e)
         {
             tabControl2 webControl = new tabControl2();
@@ -70,6 +67,7 @@ namespace WebBrowser.UI
             if (e.Control && (e.KeyCode == Keys.T)) //opens new tab
             {
                 this.MasterTabControl.TabPages.Add(tp);
+                this.MasterTabControl.SelectTab(tp);
             }
             if (e.Control && (e.KeyCode == Keys.W)) //closes tab
             {
@@ -99,6 +97,11 @@ namespace WebBrowser.UI
             {
                 hm.DeleteItem(item.Id); //deletes from db
             }
+        }
+
+        private void printPageToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            //nothing happening yet...
         }
     }
 }

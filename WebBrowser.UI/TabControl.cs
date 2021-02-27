@@ -207,10 +207,6 @@ namespace WebBrowser.UI
                 timer1.Stop();
                 this.started = false;
                 statusLabel.Text = "Done";
-            } else
-            {
-                //this.toolStripProgressBar1.Value++;
-                //removed this cause it was messing things up
             }
         }
 
@@ -249,8 +245,8 @@ namespace WebBrowser.UI
             }
             started = !started;
             Navigate(home);
-            currentStateUrl = toolStripTextBox1.Text; // stores current url
-            currUrl.Text = currentStateUrl; // stores current url in label i will delete later
+            //currentStateUrl = toolStripTextBox1.Text; // stores current url
+            //currUrl.Text = currentStateUrl; // stores current url in label i will delete later
         }
     }
 }
