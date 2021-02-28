@@ -152,7 +152,7 @@ namespace WebBrowser.UI
             //richTextBox1.Text = hoverUrl;
             //hoverLinkLabel.Text = richTextBox1.Text;
             hoverLinkLabel.Text = hoverUrl;
-            Console.WriteLine("url: " + hoverUrl + "\n");
+            //Console.WriteLine("url: " + hoverUrl + "\n");
         }
 
         // refreshes page

@@ -56,6 +56,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BookmarksDataSet.cs">
+      <DependentUpon>BookmarksDataSet.xsd</DependentUpon>
+    </Compile>
     <Compile Include="BookmarksDataSet.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>

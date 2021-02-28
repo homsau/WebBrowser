@@ -13,6 +13,7 @@ using WebBrowser.Logic;
  * Future Features:
  * make sure url updates each text box per tab
  * hold down mouse on back/forward buttons to show multiple pages (up to 5 maybe?)
+ * add dark theme
  */
 namespace WebBrowser.UI
 {
