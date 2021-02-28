@@ -81,7 +81,7 @@
             // 
             this.newTabToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("newTabToolStripMenuItem.Image")));
             this.newTabToolStripMenuItem.Name = "newTabToolStripMenuItem";
-            this.newTabToolStripMenuItem.Size = new System.Drawing.Size(222, 26);
+            this.newTabToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
             this.newTabToolStripMenuItem.Text = "New Tab";
             this.newTabToolStripMenuItem.Click += new System.EventHandler(this.newTabToolStripMenuItem_Click);
             // 
@@ -97,8 +97,9 @@
             // 
             this.savePageAsHTMLToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("savePageAsHTMLToolStripMenuItem.Image")));
             this.savePageAsHTMLToolStripMenuItem.Name = "savePageAsHTMLToolStripMenuItem";
-            this.savePageAsHTMLToolStripMenuItem.Size = new System.Drawing.Size(222, 26);
+            this.savePageAsHTMLToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
             this.savePageAsHTMLToolStripMenuItem.Text = "Save Page As HTML";
+            this.savePageAsHTMLToolStripMenuItem.Click += new System.EventHandler(this.savePageAsHTMLToolStripMenuItem_Click);
             // 
             // printPageToolStripMenuItem
             // 

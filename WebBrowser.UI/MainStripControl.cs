@@ -124,5 +124,10 @@ namespace WebBrowser.UI
         {
             //nothing happening yet...
         }
+
+        private void savePageAsHTMLToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            //nothing happening yet...
+        }
     }
 }

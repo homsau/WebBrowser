@@ -41,7 +41,7 @@ namespace WebBrowser.UI
                 {
                     statusLabel.Text = "Loading...";
                     timer1.Start();
-                    toolStripProgressBar1.Value += 1;
+                    //toolStripProgressBar1.Value++;
                 }
                 started = !started;
                 Navigate(toolStripTextBox1.Text);
@@ -61,12 +61,11 @@ namespace WebBrowser.UI
             {
                 statusLabel.Text = "Done";
                 timer1.Stop();
-            }
-            else
+            } else if (!started)
             {
                 statusLabel.Text = "Loading...";
                 timer1.Start();
-                toolStripProgressBar1.Value += 1;
+                //toolStripProgressBar1.Value++;
             }
             started = !started;
             Navigate(toolStripTextBox1.Text);
@@ -100,7 +99,8 @@ namespace WebBrowser.UI
             {
                 Console.Write("Not Available\n");
                 return;
-            } else
+            }
+            else if (!started)
             {
                 backStack.Push(currentStateUrl);
                 BS.Text = currentStateUrl; // stores current url in label i will delete later
@@ -163,12 +163,11 @@ namespace WebBrowser.UI
             {
                 statusLabel.Text = "Done";
                 timer1.Stop();
-            }
-            else
+            } else if (!started)
             {
                 statusLabel.Text = "Loading...";
                 timer1.Start();
-                toolStripProgressBar1.Value += 1;
+                //toolStripProgressBar1.Value++;
             }
             started = !started;
         }
@@ -208,7 +207,7 @@ namespace WebBrowser.UI
                 item.URL = toolStripTextBox1.Text;
                 item.Title = webBrowser1.DocumentTitle;
                 item.Date = now;
-                Console.WriteLine(item.Date);
+                //Console.WriteLine(item.Date);
                 HistoryManager.AddItem(item);
             }
         }
@@ -221,21 +220,7 @@ namespace WebBrowser.UI
                 this.started = false;
                 statusLabel.Text = "Done";
             }
-            this.toolStripProgressBar1.Value = 0;
-        }
-
-        private void webBrowser1_ProgressChanged(object sender, WebBrowserProgressChangedEventArgs e)
-        {
-            //if current value and max are ex
-            try
-            {
-                toolStripProgressBar1.Value = Convert.ToInt32(e.CurrentProgress);
-                toolStripProgressBar1.Maximum = Convert.ToInt32(e.MaximumProgress);
-            }
-            catch (Exception ex)
-            {
-                Console.WriteLine(ex.Message);
-            }
+            this.toolStripProgressBar1.Value = 1;
         }
 
         private void toolStripButton4_Click(object sender, EventArgs e) //home button
@@ -251,11 +236,11 @@ namespace WebBrowser.UI
                 statusLabel.Text = "Done";
                 timer1.Stop();
             }
-            else
+            else if (!started)
             {
                 statusLabel.Text = "Loading...";
                 timer1.Start();
-                toolStripProgressBar1.Value += 1;
+                //toolStripProgressBar1.Value++;
             }
             started = !started;
             Navigate(home);
@@ -263,6 +248,18 @@ namespace WebBrowser.UI
             currUrl.Text = currentStateUrl; // stores current url in label i will delete later
         }
 
-       
+        private void webBrowser1_ProgressChanged(object sender, WebBrowserProgressChangedEventArgs e)
+        {
+            //if current value and max are ex
+            try
+            {
+                toolStripProgressBar1.Value = Convert.ToInt32(e.CurrentProgress);
+                toolStripProgressBar1.Maximum = Convert.ToInt32(e.MaximumProgress);
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
+        }
     }
 }
