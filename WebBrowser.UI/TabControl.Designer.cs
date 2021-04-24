@@ -47,9 +47,9 @@ namespace WebBrowser.UI
             this.BS = new System.Windows.Forms.Label();
             this.FS = new System.Windows.Forms.Label();
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
-            this.hoverLinkLabel = new System.Windows.Forms.ToolStripStatusLabel();
-            this.toolStripProgressBar1 = new System.Windows.Forms.ToolStripProgressBar();
             this.statusLabel = new System.Windows.Forms.ToolStripStatusLabel();
+            this.toolStripProgressBar1 = new System.Windows.Forms.ToolStripProgressBar();
+            this.hoverLinkLabel = new System.Windows.Forms.ToolStripStatusLabel();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.richTextBox1 = new System.Windows.Forms.RichTextBox();
             this.tabControl3.SuspendLayout();
@@ -232,13 +232,12 @@ namespace WebBrowser.UI
             this.statusStrip1.TabIndex = 8;
             this.statusStrip1.Text = "statusStrip1";
             // 
-            // hoverLinkLabel
+            // statusLabel
             // 
-            this.hoverLinkLabel.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
-            this.hoverLinkLabel.Margin = new System.Windows.Forms.Padding(20, 4, 0, 2);
-            this.hoverLinkLabel.Name = "hoverLinkLabel";
-            this.hoverLinkLabel.Size = new System.Drawing.Size(0, 20);
-            this.hoverLinkLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.statusLabel.Margin = new System.Windows.Forms.Padding(0, 4, 20, 2);
+            this.statusLabel.Name = "statusLabel";
+            this.statusLabel.Size = new System.Drawing.Size(0, 20);
+            this.statusLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // toolStripProgressBar1
             // 
@@ -248,12 +247,13 @@ namespace WebBrowser.UI
             this.toolStripProgressBar1.Size = new System.Drawing.Size(200, 18);
             this.toolStripProgressBar1.Value = 1;
             // 
-            // statusLabel
+            // hoverLinkLabel
             // 
-            this.statusLabel.Margin = new System.Windows.Forms.Padding(0, 4, 20, 2);
-            this.statusLabel.Name = "statusLabel";
-            this.statusLabel.Size = new System.Drawing.Size(0, 20);
-            this.statusLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.hoverLinkLabel.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
+            this.hoverLinkLabel.Margin = new System.Windows.Forms.Padding(20, 4, 0, 2);
+            this.hoverLinkLabel.Name = "hoverLinkLabel";
+            this.hoverLinkLabel.Size = new System.Drawing.Size(0, 20);
+            this.hoverLinkLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // timer1
             // 

@@ -89,7 +89,7 @@
             // 
             this.closeCurrentTabToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("closeCurrentTabToolStripMenuItem.Image")));
             this.closeCurrentTabToolStripMenuItem.Name = "closeCurrentTabToolStripMenuItem";
-            this.closeCurrentTabToolStripMenuItem.Size = new System.Drawing.Size(222, 26);
+            this.closeCurrentTabToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
             this.closeCurrentTabToolStripMenuItem.Text = "Close Current Tab";
             this.closeCurrentTabToolStripMenuItem.Click += new System.EventHandler(this.closeCurrentTabToolStripMenuItem_Click);
             // 
@@ -105,21 +105,21 @@
             // 
             this.printPageToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("printPageToolStripMenuItem.Image")));
             this.printPageToolStripMenuItem.Name = "printPageToolStripMenuItem";
-            this.printPageToolStripMenuItem.Size = new System.Drawing.Size(222, 26);
+            this.printPageToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
             this.printPageToolStripMenuItem.Text = "Print Page";
             this.printPageToolStripMenuItem.Click += new System.EventHandler(this.printPageToolStripMenuItem_Click);
             // 
             // toolStripSeparator1
             // 
             this.toolStripSeparator1.Name = "toolStripSeparator1";
-            this.toolStripSeparator1.Size = new System.Drawing.Size(219, 6);
+            this.toolStripSeparator1.Size = new System.Drawing.Size(221, 6);
             // 
             // exitWebBrowserToolStripMenuItem
             // 
             this.exitWebBrowserToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("exitWebBrowserToolStripMenuItem.Image")));
             this.exitWebBrowserToolStripMenuItem.Name = "exitWebBrowserToolStripMenuItem";
-            this.exitWebBrowserToolStripMenuItem.Size = new System.Drawing.Size(222, 26);
-            this.exitWebBrowserToolStripMenuItem.Text = "Exit Web Browser";
+            this.exitWebBrowserToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.exitWebBrowserToolStripMenuItem.Text = "Exit Web Bowser";
             this.exitWebBrowserToolStripMenuItem.Click += new System.EventHandler(this.exitWebBrowserToolStripMenuItem_Click);
             // 
             // toolsToolStripMenuItem
